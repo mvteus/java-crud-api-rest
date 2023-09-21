@@ -38,7 +38,7 @@ public class PokedexController {
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity<Pokemon> atualizarPokemon(@PathVariable(value = "id") Long id, Pokemon pokemon) throws Exception {
+    public ResponseEntity<Pokemon> atualizarPokemon(@PathVariable(value = "id") Long id, @RequestBody Pokemon pokemon) {
         return pokemonService.atualizarPokemonById(pokemon, id);
     }
 
